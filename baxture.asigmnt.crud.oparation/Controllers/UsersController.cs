@@ -1,43 +1,32 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using baxture.asigmnt.crud.oparation.Controllers;
+using baxture.asigmnt.crud.oparation.Model;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace baxture.asigmnt.crud.oparation.UsersController
 {
-    [Route("api/[controller]")]
+    [Route("v1/users")]
     [ApiController]
-    public class UsersController : ControllerBase
+    [Produces("application/json")]
+    public class UsersController : ApiBaseController
     {
-        // GET: api/<UsersController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        public UsersController(ILogger logger, IMapper mapper, IMediator mediator) : base(logger, mapper, mediator)
         {
-            return new string[] { "value1", "value2" };
+
         }
 
-        // GET api/<UsersController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<UsersController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        [Route("register")]
+        [ProducesResponseType(typeof(RegisterUser), 201)]
+        [ProducesResponseType(typeof(ErrorModel), 400)]
+        public async Task<IActionResult> RegisterUser([FromBody] RegisterUser registerUser)
         {
-        }
 
-        // PUT api/<UsersController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+            return Ok(registerUser);
 
-        // DELETE api/<UsersController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }

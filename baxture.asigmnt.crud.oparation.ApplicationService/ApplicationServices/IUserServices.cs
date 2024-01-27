@@ -9,5 +9,7 @@ namespace baxture.asigmnt.crud.oparation.ApplicationService.ApplicationServices
     public interface IUserServices
     {
 
+         bool PutUserData();
+
     }
 }

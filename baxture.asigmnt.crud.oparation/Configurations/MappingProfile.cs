@@ -1,6 +1,8 @@
-﻿namespace baxture.asigmnt.crud.oparation.Configurations
+﻿using AutoMapper;
+
+namespace baxture.asigmnt.crud.oparation.Configurations
 {
-    public class MappingProfile
+    public class MappingProfile: Profile
     {
 
     }
