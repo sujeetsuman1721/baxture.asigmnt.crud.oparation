@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "baxture.asigmnt.crud.oparat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "baxture.asigmnt.crud.oparation.services", "baxture.asigmnt.crud.oparation.services\baxture.asigmnt.crud.oparation.services.csproj", "{3DB39210-2A7D-4216-9962-2FD1C76D27A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "baxture.asigmnt.crud.oparation.domain", "baxture.asigmnt.crud.oparation.domain\baxture.asigmnt.crud.oparation.domain.csproj", "{68626CF6-1C32-43C6-9E43-66E370E640AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "baxture.asigmnt.crud.oparation.persistance", "baxture.asigmnt.crud.oparation.persistance\baxture.asigmnt.crud.oparation.persistance.csproj", "{D0AEA08A-F7D4-4CD9-912C-4C8382F35B96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{3DB39210-2A7D-4216-9962-2FD1C76D27A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DB39210-2A7D-4216-9962-2FD1C76D27A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DB39210-2A7D-4216-9962-2FD1C76D27A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68626CF6-1C32-43C6-9E43-66E370E640AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68626CF6-1C32-43C6-9E43-66E370E640AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68626CF6-1C32-43C6-9E43-66E370E640AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68626CF6-1C32-43C6-9E43-66E370E640AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0AEA08A-F7D4-4CD9-912C-4C8382F35B96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0AEA08A-F7D4-4CD9-912C-4C8382F35B96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0AEA08A-F7D4-4CD9-912C-4C8382F35B96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0AEA08A-F7D4-4CD9-912C-4C8382F35B96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

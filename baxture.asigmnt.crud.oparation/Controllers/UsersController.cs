@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
+using baxture.asigmnt.crud.oparation.Application.Commands.UserRegistration;
+using baxture.asigmnt.crud.oparation.Application.Dtos;
 using baxture.asigmnt.crud.oparation.Controllers;
+using baxture.asigmnt.crud.oparation.domain.comman;
 using baxture.asigmnt.crud.oparation.Model;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -13,7 +16,7 @@ namespace baxture.asigmnt.crud.oparation.UsersController
     [Produces("application/json")]
     public class UsersController : ApiBaseController
     {
-        public UsersController(ILogger logger, IMapper mapper, IMediator mediator) : base(logger, mapper, mediator)
+        public UsersController(ILogger<UsersController> logger, IMapper mapper, IMediator mediator) : base(logger, mapper, mediator)
         {
 
         }
@@ -24,6 +27,20 @@ namespace baxture.asigmnt.crud.oparation.UsersController
         [ProducesResponseType(typeof(ErrorModel), 400)]
         public async Task<IActionResult> RegisterUser([FromBody] RegisterUser registerUser)
         {
+            if (registerUser == null || string.IsNullOrWhiteSpace(registerUser.UserName) || string.IsNullOrWhiteSpace(registerUser.Password) )
+            {
+                ErrorModel model = new ErrorModel()
+                {
+                    Errorcode = nameof(ErrorCodes.OSDE002),
+                    ErrorMessage = ErrorCodes.OSDE002
+                };
+                this.logger.LogInformation($"Missing required argument for the user creation request");
+                return BadRequest(model) ;
+
+            }
+            UserRegistrationDto userRegistration = this.mapper.Map<RegisterUser, UserRegistrationDto>(registerUser);
+            UserRegistrationCommand userRegistrationCommand = new (userRegistration);
+            var response = await this.mediator.Send(userRegistrationCommand);
 
             return Ok(registerUser);
 

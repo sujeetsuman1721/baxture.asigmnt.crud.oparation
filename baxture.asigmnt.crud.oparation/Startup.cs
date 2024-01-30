@@ -42,7 +42,10 @@ public class Startup
     {
         var serviceCollection = new ServiceCollection();
         builder.RegisterApplicationServices(serviceCollection)
-            .RegiterMapper();
+            .RegiterMapper()
+            .RegisterMediatorHandlers()
+            .RegisterRepositories();
+
 
 
     }
@@ -59,7 +62,7 @@ public class Startup
             endpoints.MapHealthChecks("/health");
             endpoints.MapControllers();
         });
-        app.UseSwagger(c => c.RouteTemplate = "bacture-swagger/{documentName}/swagger.json");
+        app.UseSwagger(c => c.RouteTemplate = "baxture-swagger/{documentName}/swagger.json");
         app.UseSwaggerUI(c =>
         {
             c.RoutePrefix = "baxture-swagger";

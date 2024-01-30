@@ -11,7 +11,8 @@
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="Grpc.Net.Client" Version="2.51.0" />
-    <PackageReference Include="MediatR" Version="12.2.0" />
+	  <PackageReference Include="MediatR" Version="9.0.0" />
+	  <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
     <PackageReference Include="Serilog.Formatting.Compact" Version="1.1.0" />
     <PackageReference Include="Serilog.Sinks.Async" Version="1.5.0" />
@@ -19,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\baxture.asigmnt.crud.oparation.persistance\baxture.asigmnt.crud.oparation.persistance.csproj" />
     <ProjectReference Include="..\baxture.asigmnt.crud.oparation.services\baxture.asigmnt.crud.oparation.services.csproj" />
   </ItemGroup>
 

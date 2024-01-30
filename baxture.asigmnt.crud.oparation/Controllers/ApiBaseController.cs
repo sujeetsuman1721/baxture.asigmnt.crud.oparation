@@ -9,13 +9,13 @@ namespace baxture.asigmnt.crud.oparation.Controllers
     {
         protected readonly IMapper mapper;
         protected readonly ILogger logger;
-        protected readonly IMediator imediator;
+        protected readonly IMediator mediator;
 
-        protected ApiBaseController(ILogger logger, IMapper mapper, IMediator mediator)
+        protected ApiBaseController(ILogger<ApiBaseController> logger, IMapper mapper, IMediator mediator)
         {
             this.logger = logger ?? throw new ArgumentNullException(nameof(logger));
             this.mapper = mapper ?? throw new ArgumentNullException(nameof(mapper)) ;
-            this.imediator = mediator ?? throw new ArgumentNullException(nameof(imediator));
+            this.mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
     }
 }

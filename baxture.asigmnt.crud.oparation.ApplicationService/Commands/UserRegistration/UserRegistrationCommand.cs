@@ -8,8 +8,12 @@ using System.Threading.Tasks;
 
 namespace baxture.asigmnt.crud.oparation.Application.Commands.UserRegistration
 {
-    public class UserRegistrationCommand : IRequest<UserRegistrationDto>
+    public class UserRegistrationCommand : IRequest<bool>
     {
-
+        public UserRegistrationCommand(UserRegistrationDto userRegistrationDto) 
+        { 
+            this.UserRegistrationDto = userRegistrationDto;
+        }
+        public UserRegistrationDto UserRegistrationDto { get;}
     }
 }
